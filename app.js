@@ -11,16 +11,15 @@ document.getElementById("loan-form").addEventListener("submit", function(e) {
 
 function calculateResults() {
   // UI Vars
-  const amount = document.getElementById("amount");
-  const interest = document.getElementById("interest");
-  const years = document.getElementById("years");
-  const monthlyPayment = document.getElementById("monthly-payment");
-  const totalPayment = document.getElementById("total-payment");
-  const totalInterest = document.getElementById("total-interest");
-
-  const principal = parseFloat(amount.value);
-  const calculatedInterest = parseFloat(interest.value) / 100 / 12;
-  const calculatedPayments = parseFloat(years.value) * 12;
+  const amount = document.getElementById("amount"),
+        interest = document.getElementById("interest"),
+        years = document.getElementById("years"),
+        monthlyPayment = document.getElementById("monthly-payment"),
+        totalPayment = document.getElementById("total-payment"),
+        totalInterest = document.getElementById("total-interest"),
+        principal = parseFloat(amount.value),
+        calculatedInterest = parseFloat(interest.value) / 100 / 12,
+        calculatedPayments = parseFloat(years.value) * 12;
 
   // monthly payment
 
@@ -40,10 +39,9 @@ function calculateResults() {
 }
 
 function showError(error) {
-  const errorDiv = document.createElement("div");
-
-  const card = document.querySelector(".card");
-  const heading = document.querySelector(".heading");
+  const errorDiv = document.createElement("div"),
+        card = document.querySelector(".card"),
+        heading = document.querySelector(".heading");
 
   errorDiv.className = "alert alert-danger";
   errorDiv.appendChild(document.createTextNode(error));
